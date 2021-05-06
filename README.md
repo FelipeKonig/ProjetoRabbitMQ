@@ -1,2 +1,5 @@
 # ProjetoRabbitMQ
-Projeto de chat online desenvolvido com RabbitMQ
+
+Projeto desenvolvido com a biblioteca javaFX para criação das interfaces, e RabbitMQ para criação dos canais e envios ou recebimentos de mensagens enviadas pelos usuários através do programa. O projeto contém duas interfaces, a tela de login para acessar alguma conta, e a tela de chat na qual vai ter um chat privado com cada usuário e um chat em grupo no qual todos os usuários podem se comunicar entre si. Sempre que algum contato envia alguma mensagem para o usuário, ele é notificado que a uma nova mensagem no respectivo chat.
+
+O projeto possui várias Threads, na interface para que ela seja atualizada constantemente devido as conversas realizadas dinamicamente, e nas classes que contém as lógicas de execução ligadas ao uso do RabbitMQ. Relacionado aos canais de cada usuário, existe três threads, uma thread que inicia a conexão com a fila privada do respectivo usuário, outra thread que inicia a conexão com a fila relacionada ao grupo, tendo seu nome de fila igual aos outros usuários do grupo para que assim todos recebam as mensagens enviadas ao respectivo canal, e por fim, a thread que realiza a emissão de publicações para algum canal quando o usuário envia mensagem. 
